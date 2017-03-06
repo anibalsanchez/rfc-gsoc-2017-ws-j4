@@ -33,7 +33,7 @@ This is the main list of features for the MVP:
 
 * **Development**
   - *External project from J4*. PRO: Freedom to develop and propose core changes
-  - Inclusion in the Core: Time constraints and harder to be accepted. Difficult to evolve.
+  - Inclusion in the Core: Time constraints and harder to be accepted. Hard to evolve.
 
 * **Extensibility**: other extensions must be able to add new entry points. REST API for Joomla Contacts (com_contact)
   - /api for Contacts
@@ -43,10 +43,10 @@ This is the main list of features for the MVP:
   - Update a Contact
   - Delete a Contact
 
-* **API Key Authentication**: authentication based on a general token. Generate a api key per user (in com_users for us) and use this in header for auth.
+* **API Key Authentication**: authentication based on a general token. Generate an API key per user (in com_users for us) and use this in the header for auth.
 
 * **Business Models**:
-  - *Current JModels*: The state of the models is currently tightly coupled (populate state etc.) to web stuff. Not channel-agnostic. PRO: They are throughly tested. For example: High level hacks for simple read operations. [https://github.com/mbabker/jdayflorida-app/tree/master/libraries/api/controller](https://github.com/mbabker/jdayflorida-app/tree/master/libraries/api/controller)
+  - *Current JModels*: The state of the models is currently tightly coupled (populate state etc.) to web stuff. Not channel-agnostic. PRO: They are thoroughly tested. For example: High level hacks for simple read operations. [https://github.com/mbabker/jdayflorida-app/tree/master/libraries/api/controller](https://github.com/mbabker/jdayflorida-app/tree/master/libraries/api/controller)
   - Mini-Service Layer: Create a clean layer. E.g. Article management via JTable, featured and frontend tables.
  
  * **Unit Tests**: The project must include tests.
@@ -111,5 +111,3 @@ This is the main list of features for the MVP:
 * August 21- 29: Students wrap up their projects and submit final evaluation of their mentor
 * August 29 - September 5: Mentors submit final evaluations of students
 * September 6: Students passing GSoC 2017 are announced
-
-

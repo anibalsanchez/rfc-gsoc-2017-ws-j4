@@ -45,16 +45,24 @@ This is the main list of features for the MVP:
 
 * **API Key Authentication**: authentication based on a general token. Generate an API key per user (in com_users for us) and use this in the header for auth.
 
+* **Architecture*
+  - Slim and fast API
+  - Extending AbstractApplication?
+  - Reinvent the wheel completely for webservices?
+  - Slim Framework, Laravel or Silex?
+  - Work with JApplicationSite or JApplicationAdministrator?
+  - Hot swap the applications in JFactory at onAfterInitialise?
+  
 * **Business Models**:
   - *Current JModels*: The state of the models is currently tightly coupled (populate state etc.) to web stuff. Not channel-agnostic. PRO: They are thoroughly tested. For example: High level hacks for simple read operations. [https://github.com/mbabker/jdayflorida-app/tree/master/libraries/api/controller](https://github.com/mbabker/jdayflorida-app/tree/master/libraries/api/controller)
   - Mini-Service Layer: Create a clean layer. E.g. Article management via JTable, featured and frontend tables.
- 
- * **Unit Tests**: The project must include tests.
- 
+  
  * **Interfaces**:
   - JModelInterface
     - getItem
-    - getItems
+    - getItems  
+ 
+ * **Unit Tests**: The project must include tests.
    
 ### Nice to have
 
@@ -77,6 +85,7 @@ This is the main list of features for the MVP:
 
 ## Other References
 
+* **Mar 12, 2016** - GitHub - chrisdavenport/webservices: Webservices working group repository* - [https://github.com/chrisdavenport/webservices](https://github.com/chrisdavenport/webservices)
 * **Aug 31, 2013 - GitHub - chrisdavenport/j3-rest-api: REST API for Joomla 3.x* - [https://github.com/chrisdavenport/j3-rest-api](https://github.com/chrisdavenport/j3-rest-api)
 * **May 2, 2016** - GitHub - chrisdavenport/service: Experimental Service Layer for Joomla 3.x - [https://github.com/chrisdavenport/service](https://github.com/chrisdavenport/service)
 * Three Years with the WordPress REST API - K. Adam White. [https://bocoup.com/blog/three-years-with-the-wordpress-rest-api](https://bocoup.com/blog/three-years-with-the-wordpress-rest-api) *... the answer was clear: there’s a lot of good features in WordPress, but the code foundation upon which they are built is uneven. The REST API endpoints provide a new foundation for future core feature development, a facade layer that abstracts the inconsistencies of the past...*

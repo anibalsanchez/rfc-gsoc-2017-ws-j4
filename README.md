@@ -25,7 +25,7 @@ Since there were several previous attempts to implement *Webservices in Joomla*,
 * Joomla! Downloads - Private Repo [https://github.com/joomla/downloads.joomla.org](https://github.com/joomla/downloads.joomla.org)
 * WP REST API v2 Documentation - [http://v2.wp-api.org/](http://v2.wp-api.org/)
 * Drupal 8 APIs - RESTful Web Services API - [https://www.drupal.org/docs/8/api/restful-web-services-api/restful-web-services-api-overview](https://www.drupal.org/docs/8/api/restful-web-services-api/restful-web-services-api-overview)
-* [Laravel RESTful Resource Controllers](https://laravel.com/docs/5.1/controllers#restful-resource-controllers)
+* Laravel RESTful Resource Controllers - [https://laravel.com/docs/5.1/controllers#restful-resource-controllers](https://laravel.com/docs/5.1/controllers#restful-resource-controllers)
 
 ## Other References
 

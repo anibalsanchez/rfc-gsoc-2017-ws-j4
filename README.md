@@ -19,7 +19,7 @@ Since there were several previous attempts to implement *Webservices in Joomla*,
 
 ## MVP: Minimum Viable Product
 
-### Main Features
+### Project Definitions
 
 This is the main list of features for the MVP:
 
@@ -30,14 +30,42 @@ This is the main list of features for the MVP:
   - Create a Article
   - Update a Article
   - Delete a Article
-  
+
+* **Development**
+  - *External project from J4*. PRO: Freedom to develop and propose core changes
+  - Inclusion in the Core: Time constraints and harder to be accepted. Difficult to evolve.
+
+* **Extensibility**: other extensions must be able to add new entry points. REST API for Joomla Contacts (com_contact)
+  - /api for Contacts
+  - List Contacts (/api/contacts)
+  - Retrieve a Contact (/api/contacts/999)
+  - Create a Contact
+  - Update a Contact
+  - Delete a Contact
+
+* **API Key Authentication**: authentication based on a general token. Generate a api key per user (in com_users for us) and use this in header for auth.
+
+* **Business Models**:
+  - *Current JModels*: The state of the models is currently tightly coupled (populate state etc.) to web stuff. Not channel-agnostic. PRO: They are throughly tested. For example: High level hacks for simple read operations. [https://github.com/mbabker/jdayflorida-app/tree/master/libraries/api/controller](https://github.com/mbabker/jdayflorida-app/tree/master/libraries/api/controller)
+  - Mini-Service Layer: Create a clean layer. E.g. Article management via JTable, featured and frontend tables.
+ 
+ * **Unit Tests**: The project must include tests.
+ 
+ * **Interfaces**:
+  - JModelInterface
+    - getItem
+    - getItems
+   
 ### Nice to have
 
 * User Interface to configure
+* Backwards compatibility with J3
 
 ### Out of the scope
 
 * ACL at field level
+* OAUTH
+* Service Layer
 
 ## Comparable Products
 
@@ -49,11 +77,21 @@ This is the main list of features for the MVP:
 
 ## Other References
 
+* **Aug 31, 2013 - GitHub - chrisdavenport/j3-rest-api: REST API for Joomla 3.x* - [https://github.com/chrisdavenport/j3-rest-api](https://github.com/chrisdavenport/j3-rest-api)
+* **May 2, 2016** - GitHub - chrisdavenport/service: Experimental Service Layer for Joomla 3.x - [https://github.com/chrisdavenport/service](https://github.com/chrisdavenport/service)
+* Three Years with the WordPress REST API - K. Adam White. [https://bocoup.com/blog/three-years-with-the-wordpress-rest-api](https://bocoup.com/blog/three-years-with-the-wordpress-rest-api) *... the answer was clear: there’s a lot of good features in WordPress, but the code foundation upon which they are built is uneven. The REST API endpoints provide a new foundation for future core feature development, a facade layer that abstracts the inconsistencies of the past...*
+
 ## Community Channels
 
 * Joomla GSoC 2017: https://groups.google.com/forum/#!forum/jgsoc2017
 * GSoC 2017 Idea's-Mentors List: https://docs.google.com/spreadsheets/d/1JnpspX_Uwh1Dk7iYqoQvtOVieSuRjP366PmzQPOYfHk/edit#gid=0
 * Glip Channel: GSoC 17 Webservices 
+
+## Definitions for the students
+
+# What should be the place for a student to start with, (pointing them to the right place)
+# Required Skills to join the project
+# 1 Student Slot. Optional 1 more slot if it could be defended.
 
 ## Important Upcoming Dates
 

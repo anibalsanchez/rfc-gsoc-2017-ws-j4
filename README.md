@@ -7,7 +7,7 @@
 * Knowledge Prerequisite: PHP, RESTful Webservices. 
 * Nice to have: Joomla MVC, Swagger, Knowledge of APIs.
 * Difficulty: Medium to Hard
-* Mentors: Matias Aguirre, Anibal Sanchez, George Wilson
+* Mentors: Matias Aguirre [@fastslack](https://github.com/fastslack, Anibal Sanchez [@anibalsanchez](https://github.com/anibalsanchez), George Wilson (https://github.com/wilsonge)
 
 ## RFC: Request for Comments
 
@@ -19,11 +19,31 @@ Since there were several previous attempts to implement *Webservices in Joomla*,
 
 ## MVP: Minimum Viable Product
 
+### Main Features
+
+This is the main list of features for the MVP:
+
+* REST API for Joomla Content (com_content)
+  - /api for Articles
+  - List Articles (/api/articles)
+  - Retrieve a Article (/api/articles/999)
+  - Create a Article
+  - Update a Article
+  - Delete a Article
+  
+### Nice to have
+
+* User Interface to configure
+
+### Out of the scope
+
+* ACL at field level
+
 ## Comparable Products
 
 * Joomla! Downloads - API [https://downloads.joomla.org/api-docs/](https://downloads.joomla.org/api-docs/)
 * Joomla! Downloads - Private Repo [https://github.com/joomla/downloads.joomla.org](https://github.com/joomla/downloads.joomla.org)
-* WP REST API v2 Documentation - [http://v2.wp-api.org/](http://v2.wp-api.org/)
+* WP REST API v2 Documentation - [http://v2.wp-api.org/](http://v2.wp-api.org/). [REST API Handbook](https://developer.wordpress.org/rest-api/reference/posts/)
 * Drupal 8 APIs - RESTful Web Services API - [https://www.drupal.org/docs/8/api/restful-web-services-api/restful-web-services-api-overview](https://www.drupal.org/docs/8/api/restful-web-services-api/restful-web-services-api-overview)
 * Laravel RESTful Resource Controllers - [https://laravel.com/docs/5.1/controllers#restful-resource-controllers](https://laravel.com/docs/5.1/controllers#restful-resource-controllers)
 

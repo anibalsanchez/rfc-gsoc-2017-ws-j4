@@ -7,7 +7,7 @@
 * Knowledge Prerequisite: PHP, RESTful Webservices. 
 * Nice to have: Joomla MVC, Swagger, Knowledge of APIs.
 * Difficulty: Medium to Hard
-* Mentors: Matias Aguirre [@fastslack](https://github.com/fastslack, Anibal Sanchez [@anibalsanchez](https://github.com/anibalsanchez), George Wilson (https://github.com/wilsonge)
+* Mentors: Matias Aguirre [@fastslack](https://github.com/fastslack), Anibal Sanchez [@anibalsanchez](https://github.com/anibalsanchez), George Wilson [@wilsonge](https://github.com/wilsonge)
 
 ## RFC: Request for Comments
 

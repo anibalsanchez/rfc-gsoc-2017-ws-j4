@@ -90,6 +90,12 @@ This is the main list of features for the MVP:
 * **May 2, 2016** - GitHub - chrisdavenport/service: Experimental Service Layer for Joomla 3.x - [https://github.com/chrisdavenport/service](https://github.com/chrisdavenport/service)
 * Three Years with the WordPress REST API - K. Adam White. [https://bocoup.com/blog/three-years-with-the-wordpress-rest-api](https://bocoup.com/blog/three-years-with-the-wordpress-rest-api) *... the answer was clear: there’s a lot of good features in WordPress, but the code foundation upon which they are built is uneven. The REST API endpoints provide a new foundation for future core feature development, a facade layer that abstracts the inconsistencies of the past...*
 
+### Vendor Implementations
+
+* Webservices in redCORE - [http://redcomponent-com.github.io/redCORE/?chapters/webservices/overview.md](http://redcomponent-com.github.io/redCORE/?chapters/webservices/overview.md)
+* Joomla REST API - techjoomla/Joomla-REST-API - [https://github.com/techjoomla/Joomla-REST-API](https://github.com/techjoomla/Joomla-REST-API)
+* RESTful API plugins - [appcarvers/com_api-plugins](https://github.com/appcarvers/com_api-plugins)
+
 ## Community Channels
 
 * Joomla GSoC 2017: https://groups.google.com/forum/#!forum/jgsoc2017

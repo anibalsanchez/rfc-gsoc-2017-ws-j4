@@ -89,7 +89,7 @@ This is the main list of features for the MVP:
 ## Other References
 
 * **Mar 12, 2016** - GitHub - chrisdavenport/webservices: Webservices working group repository* - [https://github.com/chrisdavenport/webservices](https://github.com/chrisdavenport/webservices)
-* **Aug 31, 2013 - GitHub - chrisdavenport/j3-rest-api: REST API for Joomla 3.x** - [https://github.com/chrisdavenport/j3-rest-api](https://github.com/chrisdavenport/j3-rest-api)
+* **Aug 31, 2013** - GitHub - chrisdavenport/j3-rest-api: REST API for Joomla 3.x - [https://github.com/chrisdavenport/j3-rest-api](https://github.com/chrisdavenport/j3-rest-api)
 * **May 2, 2016** - GitHub - chrisdavenport/service: Experimental Service Layer for Joomla 3.x - [https://github.com/chrisdavenport/service](https://github.com/chrisdavenport/service)
 * **Three Years with the WordPress REST API** - K. Adam White. [https://bocoup.com/blog/three-years-with-the-wordpress-rest-api](https://bocoup.com/blog/three-years-with-the-wordpress-rest-api) *... the answer was clear: there’s a lot of good features in WordPress, but the code foundation upon which they are built is uneven. The REST API endpoints provide a new foundation for future core feature development, a facade layer that abstracts the inconsistencies of the past...*
 

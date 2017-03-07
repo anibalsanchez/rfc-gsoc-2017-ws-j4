@@ -57,14 +57,15 @@ This is the main list of features for the MVP:
   - *Current JModels*: The state of the models is currently tightly coupled (populate state etc.) to web stuff. Not channel-agnostic. PRO: They are thoroughly tested. For example: High level hacks for simple read operations. [https://github.com/mbabker/jdayflorida-app/tree/master/libraries/api/controller](https://github.com/mbabker/jdayflorida-app/tree/master/libraries/api/controller)
   - Mini-Service Layer: Create a clean layer. E.g. Article management via JTable, featured and frontend tables.
   
- * **Interfaces**:
-  - JModelInterface
-    - getItem
-    - getItems  
- 
- * **Unit Tests**: The project must include tests.
+* **Interfaces**:
+- JModelInterface
+  - getItem
+  - getItems  
+  - ...
 
- * **URL Route**: The REST API will live in /api.
+* **Unit Tests**: The project must include tests.
+
+* **URL Route**: The REST API will live in /api.
    
 ### Nice to have
 

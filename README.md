@@ -58,10 +58,10 @@ This is the main list of features for the MVP:
   - Mini-Service Layer: Create a clean layer. E.g. Article management via JTable, featured and frontend tables.
   
 * **Interfaces**:
-- JModelInterface
-  - getItem
-  - getItems  
-  - ...
+  - JModelInterface
+    - getItem
+    - getItems  
+    - ...
 
 * **Unit Tests**: The project must include tests.
 

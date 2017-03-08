@@ -103,7 +103,8 @@ This is the main list of features for the MVP:
 
 ## Community Channels
 
-* Joomla GSoC 2017: https://groups.google.com/forum/#!forum/jgsoc2017
+* Joomla GSoC 2017 - Google Group: https://groups.google.com/forum/#!forum/jgsoc2017
+* Joomla GSoC 2017 - Google Group Topic: **RFC - GSOC 2017: Webservices in Joomla 4** https://groups.google.com/forum/#!topic/jgsoc2017/RYodqGfr8Hs
 * GSoC 2017 Idea's-Mentors List: https://docs.google.com/spreadsheets/d/1JnpspX_Uwh1Dk7iYqoQvtOVieSuRjP366PmzQPOYfHk/edit#gid=0
 * Glip Channel: GSoC 17 Webservices 
 

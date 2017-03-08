@@ -51,10 +51,11 @@ This is the main list of features for the MVP:
 * **URL Route**: The REST API will live in /api.
 
 * **Architecture (TBD)**
+  - php >= 5.5.9
   - Slim and fast API
   - Extending AbstractApplication?
   - Reinvent the wheel completely for webservices?
-  - Slim Framework, Laravel Lumen or Symfony Silex?
+  - Slim Framework, Laravel Lumen (php >= 5.6.4) or Symfony Silex?
   - Work with JApplicationSite or JApplicationAdministrator?
   - Hot swap the applications in JFactory at onAfterInitialise?
   

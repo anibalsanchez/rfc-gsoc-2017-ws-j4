@@ -54,7 +54,7 @@ This is the main list of features for the MVP:
   - Slim and fast API
   - Extending AbstractApplication?
   - Reinvent the wheel completely for webservices?
-  - Slim Framework, Laravel or Silex?
+  - Slim Framework, Laravel Lumen or Symfony Silex?
   - Work with JApplicationSite or JApplicationAdministrator?
   - Hot swap the applications in JFactory at onAfterInitialise?
   

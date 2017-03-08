@@ -88,6 +88,7 @@ This is the main list of features for the MVP:
 
 ## Other References
 
+* **Joomla! Documentation - Web Services Working Group** [https://docs.joomla.org/Web_Services_Working_Group](https://docs.joomla.org/Web_Services_Working_Group) - Contacts Ashwin Date [@coolbung](https://github.com/coolbung) and Chris Davenport [@chrisdavenport](https://github.com/chrisdavenport)
 * **Mar 12, 2016** - GitHub - chrisdavenport/webservices: Webservices working group repository* - [https://github.com/chrisdavenport/webservices](https://github.com/chrisdavenport/webservices)
 * **Aug 31, 2013** - GitHub - chrisdavenport/j3-rest-api: REST API for Joomla 3.x - [https://github.com/chrisdavenport/j3-rest-api](https://github.com/chrisdavenport/j3-rest-api)
 * **May 2, 2016** - GitHub - chrisdavenport/service: Experimental Service Layer for Joomla 3.x - [https://github.com/chrisdavenport/service](https://github.com/chrisdavenport/service)

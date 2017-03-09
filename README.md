@@ -55,7 +55,28 @@ This is the main list of features for the MVP:
   - Slim and fast API
   - Extending AbstractApplication?
   - Reinvent the wheel completely for webservices?
-  - Slim Framework, Laravel Lumen (php >= 5.6.4) or Symfony Silex?
+  - Slim Framework, Laravel Lumen (php >= 5.6.4) or Symfony Silex?. Libraries must avoid duplication with Joomla!. Joomla 4 is currently already including these libraries:
+    - php >=5.5.9
+    - joomla/application
+    - joomla/crypt
+    - joomla/data
+    - joomla/di
+    - joomla/event
+    - joomla/http
+    - joomla/image
+    - joomla/ldap
+    - joomla/registry
+    - joomla/session
+    - joomla/string
+    - joomla/uri
+    - joomla/utilities
+    - ircmaxell/password-compat
+    - leafo/lessphp
+    - paragonie/random_compat
+    - phpmailer/phpmailer
+    - symfony/polyfill-php55
+    - symfony/polyfill-php56
+    - symfony/yaml    
   - Work with JApplicationSite or JApplicationAdministrator?
   - Hot swap the applications in JFactory at onAfterInitialise?
   

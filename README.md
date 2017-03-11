@@ -87,7 +87,7 @@ Joomla! MVC is currently oriented to support Joomla! CMS. In its evolution, it h
 | Feature | Slim Framework | Lumen (Laravel) | Silex (Symfony)
 | ------- | -------------- | --------------- | ----------------|
 | php     |                | 5.6.4           |        5.5.9    |
-| Dependency Container | Pimple ([or 3rd-party](https://www.slimframework.com/docs/concepts/di.html)) | Laravel | Pimple |
+| Dependency Container | Pimple ([or 3rd-party DI](https://www.slimframework.com/docs/concepts/di.html)) | Laravel | Pimple |
 
 * **Business Models (TBD)**:
   - *Current JModels*: The state of the models is currently tightly coupled (populate state etc.) to web stuff. Not channel-agnostic. PRO: They are thoroughly tested. For example: High level hacks for simple read operations. [https://github.com/mbabker/jdayflorida-app/tree/master/libraries/api/controller](https://github.com/mbabker/jdayflorida-app/tree/master/libraries/api/controller)

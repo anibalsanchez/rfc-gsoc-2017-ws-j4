@@ -55,7 +55,7 @@ This is the main list of features for the MVP:
   - Slim and fast API
   - Extending AbstractApplication?
   - Reinvent the wheel completely for webservices?
-  - Slim Framework, Laravel Lumen (php >= 5.6.4) or Symfony Silex?. Libraries must avoid duplication with Joomla!. Joomla 4 is currently already including these libraries:
+  - Libraries must avoid duplication with Joomla!. Joomla 4 is currently already including these libraries:
     - php >=5.5.9
     - joomla/application
     - joomla/crypt
@@ -79,7 +79,16 @@ This is the main list of features for the MVP:
     - symfony/yaml    
   - Work with JApplicationSite or JApplicationAdministrator?
   - Hot swap the applications in JFactory at onAfterInitialise?
-  
+
+* **Possible Micro-frameworks**:
+
+Joomla! MVC is currently oriented to support Joomla! CMS. In its evolution, it has perfected a specific way to solve the CMS challenges. This implementation cannot be easily tailored to support a REST interface at core level. Following this argument, a third-party micro-framework can be added to this GSoC implementation to solve the project requirements.
+
+| Feature | Slim Framework | Lumen (Laravel) | Silex (Symfony)
+| ------- | -------------- | --------------- | ----------------|
+| php     |                | 5.6.4           |        5.5.9    |
+| Dependency Container | Pimple ([or 3rd-party](https://www.slimframework.com/docs/concepts/di.html)) | Laravel | Pimple |
+
 * **Business Models (TBD)**:
   - *Current JModels*: The state of the models is currently tightly coupled (populate state etc.) to web stuff. Not channel-agnostic. PRO: They are thoroughly tested. For example: High level hacks for simple read operations. [https://github.com/mbabker/jdayflorida-app/tree/master/libraries/api/controller](https://github.com/mbabker/jdayflorida-app/tree/master/libraries/api/controller)
   - Mini-Service Layer: Create a clean layer. E.g. Article management via JTable, featured and frontend tables.

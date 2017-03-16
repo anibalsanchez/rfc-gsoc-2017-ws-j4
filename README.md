@@ -37,8 +37,7 @@ a. Calls  Joomla Content (com_content)
   - Update a Article
   - Delete a Article
 
-> Api/v1/ should be defined by the extension routes (v1 is not static)
-> Versioning is probably going to be something defined at a component level
+> Api/v1/ should be defined by the extension routes (v1 is not static). Versioning is probably going to be something defined at a component level.
 
 b. Responses
   - Entity access level - Serialization from a model's getItem()
@@ -104,9 +103,7 @@ Possible /api folder structure. New J-WS Classes, based on Joomla! Framework:
 
 ##### b. Development Alternative: 3-Party Micro-framework 
 
-As an alternative, nowadays, there are several popular micro-frameworks that can solve solve the project requirements.
-
- Following this argument, these are some suitable  third-party micro-frameworks:
+As an alternative, nowadays, there are several popular micro-frameworks that can solve solve the project requirements. Following this argument, these are some suitable third-party micro-frameworks:
 
 | Feature | Slim Framework | Lumen (Laravel) | Silex (Symfony)
 | ------- | -------------- | --------------- | ----------------|
@@ -119,7 +116,6 @@ These alternatives offer a solution to implement the web service protocol stack.
 - Duplication
   
 > A third party REST library requires completely separate set of infrastructure. A infrastructure to boot the application, trigger our plugins, models, deal with figuring out how to get routes mapped, etc.
-
 
 For instance, the plugin system is important to allow data manipulation. JForms has events to enhance forms. (E.g. RSS Feeds don't have any event associated with plugins).
 

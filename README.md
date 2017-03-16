@@ -25,7 +25,7 @@ Since there were several previous attempts to implement *Webservices in Joomla*,
 
 This is the main list of features for the MVP:
 
-1. REST API 
+#### 1. REST API 
 
 **URL Route**: The REST API will live in /api.
 
@@ -45,9 +45,9 @@ b. Responses
   - Full serialization (E.g. Sylius or FriendsOfSymfony/FOSRestBundle) - out of scope / milestone 2 or 3
   - Column by column - out of scope / milestone 2 or 3
 
-2. Controllers - *The micro-framework to create web service protocol stack*
+#### 2. Controllers - *The micro-framework to create web service protocol stack*
 
-a. Development Alternative: Joomla! Framework
+##### a. Development Alternative: Joomla! Framework
 
 **Joomla!** has evolved for more than 10 years, powered by MVC, developed to solve its specific requirements to create an award-winning content management system (CMS), which enables you to build web sites and powerful online applications. 
 
@@ -102,7 +102,7 @@ Possible /api folder structure. New J-WS Classes, based on Joomla! Framework:
 			extensionname/Controller/Api or WebService
 		/api/includes	      
 
-b. Development Alternative: 3-Party Micro-framework 
+##### b. Development Alternative: 3-Party Micro-framework 
 
 As an alternative, nowadays, there are several popular micro-frameworks that can solve solve the project requirements.
 
@@ -120,7 +120,7 @@ These alternatives offer a solution to implement the web service protocol stack.
   
 > A third party REST library requires completely separate set of infrastructure. A infrastructure to boot the application, trigger our plugins, models, deal with figuring out how to get routes mapped, etc.
 
-3. **Business Models**
+#### 3. **Business Models**
 
 - *Current JModels*: The state of the models is currently tightly coupled (populate state etc.) to web stuff. Not channel-agnostic. PRO: They are thoroughly tested. For example: High level hacks for simple read operations. [https://github.com/mbabker/jdayflorida-app/tree/master/libraries/api/controller](https://github.com/mbabker/jdayflorida-app/tree/master/libraries/api/controller)
 
@@ -138,7 +138,7 @@ Topics to be checked: JForms, Custom Fields, Rules, and Filters.
     - getItems  
     - ...  
 
-4. **Extensibility**: other extensions must be able to add new entry points. REST API for Joomla Contacts (com_contact)
+##### 4. **Extensibility**: other extensions must be able to add new entry points. REST API for Joomla Contacts (com_contact)
   - /api for Contacts
   - List Contacts (/api/v1/contacts)
   - Retrieve a Contact (/api/contacts/v1/999)
@@ -146,11 +146,11 @@ Topics to be checked: JForms, Custom Fields, Rules, and Filters.
   - Update a Contact
   - Delete a Contact
 
-5. **User Interface**
+##### 5. **User Interface**
 
 Optional. To configure the webservice.
 
-6. **API Key Authentication**
+##### 6. **API Key Authentication**
 
 Authentication based on a general token. Generate an API key per user (in com_users for us) and use this in the header for auth. A general API Key.
 

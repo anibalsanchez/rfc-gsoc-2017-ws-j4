@@ -13,9 +13,11 @@
 
 * Status: Draft
 
+## Purpose
+
 This document is intended to describe the current state of the general conversation about the scope of the *GSOC 2017: Webservices in Joomla 4* project.
 
-Since there were several previous attempts to implement *Webservices in Joomla*, the focus of this particular project is to achieve a working project to provide a REST interface for Joomla 4. Joomla 4 will be released with this project as a tool for the community benefit.
+Since there were several previous attempts to implement *Webservices in Joomla*, the focus of this particular project is to achieve a working project to provide a REST interface for Joomla 4. Joomla 4 will be released with this project as a tool for the community benefit. For more information about a REST Api: [Web API Design - Crafting Interfaces that Developers Love](https://pages.apigee.com/rs/apigee/images/api-design-ebook-2012-03.pdf).
 
 ## MVP: Minimum Viable Product
 
@@ -23,81 +25,141 @@ Since there were several previous attempts to implement *Webservices in Joomla*,
 
 This is the main list of features for the MVP:
 
-* REST API for Joomla Content (com_content)
+1. REST API 
+
+**URL Route**: The REST API will live in /api.
+
+a. Calls  Joomla Content (com_content)
   - /api for Articles
-  - List Articles (/api/articles)
-  - Retrieve a Article (/api/articles/999)
+  - List Articles (/api/v1/articles)
+  - Retrieve a Article (/api/articles/v1/999)
   - Create a Article
   - Update a Article
   - Delete a Article
 
-* **Development**
-  - *External project from J4*. PRO: Freedom to develop and propose core changes
-  - Inclusion in the Core: Time constraints and harder to be accepted. Hard to evolve.
+> Api/v1/ should be defined by the extension routes (v1 is not static)
+> Versioning is probably going to be something defined at a component level
 
-* **Extensibility**: other extensions must be able to add new entry points. REST API for Joomla Contacts (com_contact)
-  - /api for Contacts
-  - List Contacts (/api/contacts)
-  - Retrieve a Contact (/api/contacts/999)
-  - Create a Contact
-  - Update a Contact
-  - Delete a Contact
+b. Responses
+  - Entity access level - Serialization from a model's getItem()
+  - Full serialization (E.g. Sylius or FriendsOfSymfony/FOSRestBundle) - out of scope / milestone 2 or 3
+  - Column by column - out of scope / milestone 2 or 3
 
-* **API Key Authentication**: authentication based on a general token. Generate an API key per user (in com_users for us) and use this in the header for auth.
+2. Controllers - *The micro-framework to create web service protocol stack*
 
-* **Unit Tests**: The project must include tests.
-  - [Running Automated Tests for the Joomla CMS](https://docs.joomla.org/Running_Automated_Tests_for_the_Joomla_CMS)
+a. Development Alternative: Joomla! Framework
 
-* **URL Route**: The REST API will live in /api.
+**Joomla!** has evolved for more than 10 years, powered by MVC, developed to solve its specific requirements to create an award-winning content management system (CMS), which enables you to build web sites and powerful online applications. 
 
-* **Architecture (TBD)**
-  - php >= 5.5.9
-  - Slim and fast API
-  - Extending AbstractApplication?
-  - Reinvent the wheel completely for webservices?
-  - Libraries must avoid duplication with Joomla!. Joomla 4 is currently already including these libraries:
-    - php >=5.5.9
-    - joomla/application
-    - joomla/crypt
-    - joomla/data
-    - joomla/di
-    - joomla/event
-    - joomla/http
-    - joomla/image
-    - joomla/ldap
-    - joomla/registry
-    - joomla/session
-    - joomla/string
-    - joomla/uri
-    - joomla/utilities
-    - ircmaxell/password-compat
-    - leafo/lessphp
-    - paragonie/random_compat
-    - phpmailer/phpmailer
-    - symfony/polyfill-php55
-    - symfony/polyfill-php56
-    - symfony/yaml    
-  - Work with JApplicationSite or JApplicationAdministrator?
-  - Hot swap the applications in JFactory at onAfterInitialise?
+In practice, these are the key classes that support Joomla! MVC:
+  - JApplicationSite and JApplicationAdministrator
+  - JControllerLegacy (there was a previous JController)
+  - JModelLegacy (there was a previous JModel) and JTable
+  - JRouter
+  - JFactory
 
-* **Possible Micro-frameworks**:
+Joomla! MVC is currently oriented to support Joomla! CMS. In its evolution, it has perfected a specific way to solve the CMS challenges, including a complex content model to support Category Management, JForms, Custom Fields, Rules, and Filters. *This implementation cannot be easily tailored to support a REST interface*.  
 
-Joomla! MVC is currently oriented to support Joomla! CMS. In its evolution, it has perfected a specific way to solve the CMS challenges. This implementation cannot be easily tailored to support a REST interface at core level. Following this argument, a third-party micro-framework can be added to this GSoC implementation to solve the project requirements.
+JControllers, existing component controllers are not designed for WS, so there is a need of specialized controllers for REST versus full HTML. This is a core infrastructure problem that has to be solved in general (not related to just the WS project).
+
+Additionally, we have [Joomla! Framework](https://framework.joomla.org/), a new PHP framework for writing web and command line applications without the features and corresponding overhead found in the Joomla! Content Management System (CMS). At this time, Joomla 4 is coming with Joomla! Framework:
+
+- php >=5.5.9
+- joomla/application
+- joomla/crypt
+- joomla/data
+- joomla/di
+- joomla/event
+- joomla/http
+- joomla/image
+- joomla/ldap
+- joomla/registry
+- joomla/session
+- joomla/string
+- joomla/uri
+- joomla/utilities
+- ircmaxell/password-compat
+- leafo/lessphp
+- paragonie/random_compat
+- phpmailer/phpmailer
+- symfony/polyfill-php55
+- symfony/polyfill-php56
+- symfony/yaml    
+
+Sample code to define routes in Joomla! Framework: [https://github.com/joomla/framework.joomla.org/blob/master/src/Service/ApplicationProvider.php#L227-L230](https://github.com/joomla/framework.joomla.org/blob/master/src/Service/ApplicationProvider.php#L227-L230)
+
+		$router = new ContainerAwareRestRouter($container->get(Input::class));
+		$router->setControllerPrefix('Joomla\\FrameworkWebsite\\Controller\\Api\\')
+			->addMap('/api/v1/packages', 'StatusController')
+			->addMap('/api/v1/packages/:package', 'PackageController');
+
+Possible /api folder structure. New J-WS Classes, based on Joomla! Framework:
+
+		/api/index.php
+		/api/router.php (routes.json - RestRouter)
+		/api/controller (initial working build - generic controller)
+			component controllers - milestone 2 or 3
+			extensionname/Controller/Api or WebService
+		/api/includes	      
+
+b. Development Alternative: 3-Party Micro-framework 
+
+As an alternative, nowadays, there are several popular micro-frameworks that can solve solve the project requirements.
+
+ Following this argument, these are some suitable  third-party micro-frameworks:
 
 | Feature | Slim Framework | Lumen (Laravel) | Silex (Symfony)
 | ------- | -------------- | --------------- | ----------------|
 | php     | 5.5.0          | 5.6.4           |        5.5.9    |
 | Dependency Container | Pimple ([or 3rd-party DI](https://www.slimframework.com/docs/concepts/di.html)) | Laravel | Pimple |
+ 
+These alternatives offer a solution to implement the web service protocol stack. However, they bring new challenges:
 
-* **Business Models (TBD)**:
-  - *Current JModels*: The state of the models is currently tightly coupled (populate state etc.) to web stuff. Not channel-agnostic. PRO: They are thoroughly tested. For example: High level hacks for simple read operations. [https://github.com/mbabker/jdayflorida-app/tree/master/libraries/api/controller](https://github.com/mbabker/jdayflorida-app/tree/master/libraries/api/controller)
-  - Mini-Service Layer: Create a clean layer. E.g. Article management via JTable, featured and frontend tables.
+- Addition of a new stack to Joomla! ecosystem (that it is not managed by Joomla! community).
+- Duplication
   
-* **Interfaces (TBD)**:
+> A third party REST library requires completely separate set of infrastructure. A infrastructure to boot the application, trigger our plugins, models, deal with figuring out how to get routes mapped, etc.
+
+3. **Business Models**
+
+- *Current JModels*: The state of the models is currently tightly coupled (populate state etc.) to web stuff. Not channel-agnostic. PRO: They are thoroughly tested. For example: High level hacks for simple read operations. [https://github.com/mbabker/jdayflorida-app/tree/master/libraries/api/controller](https://github.com/mbabker/jdayflorida-app/tree/master/libraries/api/controller)
+
+Following the previous arguments, in both cases, **JModels** are the best available business layer to integrate the upper layers.
+
+In the future a *Mini-Service Layer* could help to create a clean layer. E.g. Article management via JTable, featured and frontend tables.
+
+In this project, we will implement a simple serialization. Entity access level - Serialization from a model's getItem()
+
+Topics to be checked: JForms, Custom Fields, Rules, and Filters.
+
+* *Interfaces (TBD)*:
   - JModelInterface
     - getItem
     - getItems  
-    - ...
+    - ...  
+
+4. **Extensibility**: other extensions must be able to add new entry points. REST API for Joomla Contacts (com_contact)
+  - /api for Contacts
+  - List Contacts (/api/v1/contacts)
+  - Retrieve a Contact (/api/contacts/v1/999)
+  - Create a Contact
+  - Update a Contact
+  - Delete a Contact
+
+5. **User Interface**
+
+Optional. To configure the webservice.
+
+6. **API Key Authentication**
+
+Authentication based on a general token. Generate an API key per user (in com_users for us) and use this in the header for auth. A general API Key.
+
+* **Development**
+  - *External project from J4*. PRO: Freedom to develop and propose core changes
+  - Inclusion in the Core: Time constraints and harder to be accepted. Hard to evolve.
+
+* **Unit Tests**: The project must include tests.
+  - [Running Automated Tests for the Joomla CMS](https://docs.joomla.org/Running_Automated_Tests_for_the_Joomla_CMS)
 
 ### Nice to have
 

@@ -17,7 +17,7 @@
 
 This document is intended to describe the current state of the general conversation about the scope of the *GSOC 2017: Webservices in Joomla 4* project.
 
-Since there were several previous attempts to implement *Webservices in Joomla*, the focus of this particular project is to achieve a working project to provide a REST interface for Joomla 4. Joomla 4 will be released with this project as a tool for the community benefit. For more information about a REST Api: [Web API Design - Crafting Interfaces that Developers Love](https://pages.apigee.com/rs/apigee/images/api-design-ebook-2012-03.pdf).
+Since there were several previous attempts to implement *Webservices in Joomla*, the focus of this particular project is to achieve a working project to provide a REST interface for Joomla 4. Joomla 4 will be released with this project as a tool for the community benefit. For more information about a REST API: [Web API Design - Crafting Interfaces that Developers Love](https://pages.apigee.com/rs/apigee/images/api-design-ebook-2012-03.pdf).
 
 ## MVP: Minimum Viable Product
 
@@ -59,7 +59,7 @@ In practice, these are the key classes that support Joomla! MVC:
 
 Joomla! MVC is currently oriented to support Joomla! CMS. In its evolution, it has perfected a specific way to solve the CMS challenges, including a complex content model to support Category Management, JForms, Custom Fields, Rules, and Filters. *This implementation cannot be easily tailored to support a REST interface*.  
 
-JControllers, existing component controllers are not designed for WS, so there is a need of specialized controllers for REST versus full HTML. This is a core infrastructure problem that has to be solved in general (not related to just the WS project).
+JControllers: existing component controllers are not designed for WS. So there is a need for specialised controllers for REST versus full HTML. This is a core infrastructure problem that has to be solved in general (not related to just the WS project).
 
 Additionally, we have [Joomla! Framework](https://framework.joomla.org/), a new PHP framework for writing web and command line applications without the features and corresponding overhead found in the Joomla! Content Management System (CMS). At this time, Joomla 4 is coming with Joomla! Framework:
 
@@ -103,7 +103,7 @@ Possible /api folder structure. New J-WS Classes, based on Joomla! Framework:
 
 ##### b. Development Alternative: 3-Party Micro-framework 
 
-As an alternative, nowadays, there are several popular micro-frameworks that can solve solve the project requirements. Following this argument, these are some suitable third-party micro-frameworks:
+As an alternative, nowadays, several popular micro-frameworks can solve the project requirements. Following this argument, these are some suitable third-party micro-frameworks:
 
 | Feature | Slim Framework | Lumen (Laravel) | Silex (Symfony)
 | ------- | -------------- | --------------- | ----------------|
@@ -115,7 +115,7 @@ These alternatives offer a solution to implement the web service protocol stack.
 - Addition of a new stack to Joomla! ecosystem (that it is not managed by Joomla! community).
 - Duplication
   
-> A third party REST library requires completely separate set of infrastructure. A infrastructure to boot the application, trigger our plugins, models, deal with figuring out how to get routes mapped, etc.
+> A third party REST library requires an entirely separate infrastructure, to boot the application, trigger our plugins, models, deal with figuring out how to get routes mapped, etc.
 
 For instance, the plugin system is important to allow data manipulation. JForms has events to enhance forms. (E.g. RSS Feeds don't have any event associated with plugins).
 

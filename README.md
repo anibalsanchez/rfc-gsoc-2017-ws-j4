@@ -27,7 +27,7 @@ This is the main list of features for the MVP:
 
 #### 1. REST API 
 
-**URL Route**: The REST API will live in /api.
+URL Route: The REST API will live in /api.
 
 a. Calls  Joomla Content (com_content)
   - /api for Articles
@@ -49,13 +49,13 @@ b. Responses
 
 ##### a. Development Alternative: Joomla! Framework
 
-**Joomla!** has evolved for more than 10 years, powered by MVC, developed to solve its specific requirements to create an award-winning content management system (CMS), which enables you to build web sites and powerful online applications. 
+Joomla! has evolved for more than 10 years, powered by MVC, developed to solve its specific requirements to create an award-winning content management system (CMS), which enables you to build web sites and powerful online applications. 
 
 In practice, these are the key classes that support Joomla! MVC:
   - JApplicationSite and JApplicationAdministrator
-  - JControllerLegacy (there was a previous JController)
-  - JModelLegacy (there was a previous JModel) and JTable
-  - JRouter
+  - JControllerLegacy
+  - JModelLegacy and JTable
+  - JRouter and JMenu
   - JFactory
 
 Joomla! MVC is currently oriented to support Joomla! CMS. In its evolution, it has perfected a specific way to solve the CMS challenges, including a complex content model to support Category Management, JForms, Custom Fields, Rules, and Filters. *This implementation cannot be easily tailored to support a REST interface*.  
@@ -120,7 +120,10 @@ These alternatives offer a solution to implement the web service protocol stack.
   
 > A third party REST library requires completely separate set of infrastructure. A infrastructure to boot the application, trigger our plugins, models, deal with figuring out how to get routes mapped, etc.
 
-#### 3. **Business Models**
+
+For instance, the plugin system is important to allow data manipulation. JForms has events to enhance forms. (E.g. RSS Feeds don't have any event associated with plugins).
+
+#### 3. Business Models
 
 - *Current JModels*: The state of the models is currently tightly coupled (populate state etc.) to web stuff. Not channel-agnostic. PRO: They are thoroughly tested. For example: High level hacks for simple read operations. [https://github.com/mbabker/jdayflorida-app/tree/master/libraries/api/controller](https://github.com/mbabker/jdayflorida-app/tree/master/libraries/api/controller)
 
@@ -130,7 +133,7 @@ In the future a *Mini-Service Layer* could help to create a clean layer. E.g. Ar
 
 In this project, we will implement a simple serialization. Entity access level - Serialization from a model's getItem()
 
-Topics to be checked: JForms, Custom Fields, Rules, and Filters.
+Topics to be checked: Tags, Version history, JForms, Custom Fields, Rules, and Filters.
 
 * *Interfaces (TBD)*:
   - JModelInterface
@@ -138,28 +141,36 @@ Topics to be checked: JForms, Custom Fields, Rules, and Filters.
     - getItems  
     - ...  
 
-##### 4. **Extensibility**: other extensions must be able to add new entry points. REST API for Joomla Contacts (com_contact)
+##### 4. Extensibility
+
+Other extensions must be able to add new entry points. REST API for Joomla Contacts (com_contact)
+
   - /api for Contacts
   - List Contacts (/api/v1/contacts)
   - Retrieve a Contact (/api/contacts/v1/999)
   - Create a Contact
   - Update a Contact
   - Delete a Contact
+  - routes.json or routes.extensionname.xml
 
-##### 5. **User Interface**
+##### 5. User Interface
 
 Optional. To configure the webservice.
 
-##### 6. **API Key Authentication**
+##### 6. API Key Authentication
 
 Authentication based on a general token. Generate an API key per user (in com_users for us) and use this in the header for auth. A general API Key.
 
-* **Development**
-  - *External project from J4*. PRO: Freedom to develop and propose core changes
-  - Inclusion in the Core: Time constraints and harder to be accepted. Hard to evolve.
+### Development
 
-* **Unit Tests**: The project must include tests.
-  - [Running Automated Tests for the Joomla CMS](https://docs.joomla.org/Running_Automated_Tests_for_the_Joomla_CMS)
+- *External project from J4*. PRO: Freedom to develop and propose core changes.
+- Inclusion in the Core: Time constraints and harder to be accepted. Hard to evolve.
+
+### Unit Tests
+
+The project must include tests.
+
+- [Running Automated Tests for the Joomla CMS](https://docs.joomla.org/Running_Automated_Tests_for_the_Joomla_CMS)
 
 ### Nice to have
 

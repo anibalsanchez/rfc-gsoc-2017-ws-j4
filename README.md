@@ -2,7 +2,7 @@
 
 ## New official repository: joomla-projects/gsoc17_webservices
 
-**We have now an official repo [joomla-projects/gsoc17_webservices](https://github.com/joomla-projects/gsoc17_webservices). This repository is not longer updated.W**
+**We have now an official repo [joomla-projects/gsoc17_webservices](https://github.com/joomla-projects/gsoc17_webservices). This repository is not longer updated.**
 
 ## RFC: Request for Comments
 

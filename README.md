@@ -1,5 +1,11 @@
 # GSOC 2017: Webservices in Joomla 4
 
+## New official repository: joomla-projects/gsoc17_webservices
+
+** We have now an official repo [joomla-projects/gsoc17_webservices](https://github.com/joomla-projects/gsoc17_webservices). This repository is not longer updated. **
+
+## RFC: Request for Comments
+
 *Welcome to the Joomla! Google Summer of Code (GSoC) 2017 project: Webservices in Joomla 4!*
 
 * Project Description: Integrating a rest API endpoint (like API/) into the Joomla Core. More information is going to follow in the next days.
@@ -8,8 +14,6 @@
 * Nice to have: Joomla MVC, Swagger, Knowledge of APIs.
 * Difficulty: Medium to Hard
 * Mentors: Matias Aguirre [@fastslack](https://github.com/fastslack), Anibal Sanchez [@anibalsanchez](https://github.com/anibalsanchez), George Wilson [@wilsonge](https://github.com/wilsonge)
-
-## RFC: Request for Comments
 
 * Status: Draft
 

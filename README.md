@@ -1,9 +1,5 @@
 # GSOC 2017: Webservices in Joomla 4
 
-## New official repository: joomla-projects/gsoc17_webservices
-
-**We have now an official repo [joomla-projects/gsoc17_webservices](https://github.com/joomla-projects/gsoc17_webservices). This repository is not longer maintained.**
-
 ## RFC: Request for Comments
 
 *Welcome to the Joomla! Google Summer of Code (GSoC) 2017 project: Webservices in Joomla 4!*
@@ -14,8 +10,9 @@
 * Nice to have: Joomla MVC, Swagger, Knowledge of APIs.
 * Difficulty: Medium to Hard
 * Mentors: Matias Aguirre [@fastslack](https://github.com/fastslack), Anibal Sanchez [@anibalsanchez](https://github.com/anibalsanchez), George Wilson [@wilsonge](https://github.com/wilsonge)
+* **Official repository**: [joomla-projects/gsoc17_webservices](https://github.com/joomla-projects/gsoc17_webservices).
 
-* Status: Draft
+* **Status: Draft**
 
 ## Purpose
 
@@ -104,6 +101,18 @@ Possible /api folder structure. New J-WS Classes, based on Joomla! Framework:
 			component controllers - milestone 2 or 3
 			extensionname/Controller/Api or WebService
 		/api/includes	      
+
+###### [Joomla! Framework Sample Applications](#jf-samples)
+
+To guide the implementation, we have several sample applications, poewered by Joomla! Framework:
+
+* https://github.com/joomla-framework - Lot of useful information into libraries README [https://github.com/joomla-framework](https://github.com/joomla-framework)
+* https://framework.joomla.org - Application powering the internet home of the Joomla! Framework. [https://github.com/joomla/framework.joomla.org](https://github.com/joomla/framework.joomla.org)
+* https://help.joomla.org - Application powering the Joomla! Help Screen proxy serving help screens to Joomla! installations. [https://github.com/joomla/help.joomla.org](https://github.com/joomla/help.joomla.org)
+* Joomla Stats. Server for collecting environment stats for Joomla Installations. [https://github.com/joomla/statistics-server](https://github.com/joomla/statistics-server)
+* https://issues.joomla.org - Issue tracking application extending GitHub's issues and pull requests for the Joomla! project. [https://github.com/joomla/jissues](https://github.com/joomla/jissues)
+* jUpgradeNext. An application using Joomla! Framework with DI. [https://github.com/matware-lab/jUpgradeNext/blob/master/src/CliApplication.php](https://github.com/matware-lab/jUpgradeNext/blob/master/src/CliApplication.php)
+* How to register providers with [https://github.com/matware-lab/jUpgradeNext/blob/master/src/CliApplication.php#L121](https://github.com/matware-lab/jUpgradeNext/blob/master/src/CliApplication.php#L121)
 
 ##### b. Development Alternative: 3-Party Micro-framework 
 
